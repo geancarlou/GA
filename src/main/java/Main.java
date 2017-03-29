@@ -7,8 +7,6 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import com.thoughtworks.xstream.XStream;
 
 import model.Cliente;
