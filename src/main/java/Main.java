@@ -125,13 +125,15 @@ public class Main {
 			}
 			System.out.println();
 			
-			System.out.print(JsonUtils.toJsonException(cliente));
+			JsonUtils json = new JsonUtils();
+			System.out.print("{\"cliente\": " + json.toJson(cliente) + "}");
 			System.out.println();
-			System.out.print(JsonUtils.toJsonException(vendedor));
+			System.out.print("{\"vendedor\": " + json.toJson(vendedor) + "}");
 			System.out.println();
-			System.out.print(JsonUtils.toJsonException(caneta));
+			System.out.print("{\"produto\":" + json.toJson(caneta) + "}");
 			System.out.println();
-			System.out.print(JsonUtils.toJsonException(pedido, "pedido"));
+			json = new JsonUtils("pedido");
+			System.out.print("{\"pedido\": " + json.toJson(pedido) + "}");
 			
 			
 			session.close();
