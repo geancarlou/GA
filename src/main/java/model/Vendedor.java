@@ -39,10 +39,10 @@ public class Vendedor implements Serializable {
 	@XmlElement(required = true)
 	private String documento;
 	
-	@Column(name="data_nascimento", nullable = false)
-	@Temporal(TemporalType.DATE)
-	@XmlElement(required = true)
-	private Date dataNascimento;
+//	@Column(name="data_nascimento", nullable = false)
+//	@Temporal(TemporalType.DATE)
+//	@XmlElement(required = true)
+//	private Date dataNascimento;
 	
 	public Long getSeqVendedor() {
 		return seqVendedor;
@@ -68,12 +68,12 @@ public class Vendedor implements Serializable {
 		this.nome = nome;
 	}
 	
-	public Date getDataNascimento() {
-		return dataNascimento;
-	}
-	
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
+//	public Date getDataNascimento() {
+//		return dataNascimento;
+//	}
+//	
+//	public void setDataNascimento(Date dataNascimento) {
+//		this.dataNascimento = dataNascimento;
+//	}
 	
 }
