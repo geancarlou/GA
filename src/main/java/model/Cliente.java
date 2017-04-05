@@ -1,12 +1,14 @@
 package model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -31,6 +33,9 @@ public class Cliente implements Serializable {
 	@Column(name="nome", nullable = false, length = 250)
 	@XmlElement(required = true)
 	private String nome;
+	
+	@OneToMany(mappedBy="cliente")
+    private List<Pedido> pedidos;
 	
 	public Long getSeqCliente() {
 		return seqCliente;

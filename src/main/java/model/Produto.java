@@ -2,12 +2,16 @@ package model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -37,6 +41,10 @@ public class Produto implements Serializable {
 	@XmlElement(defaultValue = "0")
 	private BigDecimal valor;
 
+	@OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY, orphanRemoval=true, cascade=CascadeType.ALL)
+	@XmlElement(required = true)
+	private List<Item> listaitens;
+	
 	public Long getSeqProduto() {
 		return seqProduto;
 	}
