@@ -14,7 +14,7 @@ public class JsonUtils {
 	private Gson gson;
 
 	public JsonUtils() {
-		GsonBuilder gsonBuilder = new GsonBuilder();
+		GsonBuilder gsonBuilder = new GsonBuilder().setPrettyPrinting();
 		gsonBuilder.setDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 		gsonBuilder.setExclusionStrategies(new ExclusionStrategy() {
 			public boolean shouldSkipField(FieldAttributes f) {
@@ -31,7 +31,7 @@ public class JsonUtils {
 	}
 	
 	public JsonUtils(final String... exclude) {
-		GsonBuilder gsonBuilder = new GsonBuilder();
+		GsonBuilder gsonBuilder = new GsonBuilder().setPrettyPrinting();
 		gsonBuilder.setDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 		gsonBuilder.setExclusionStrategies(new ExclusionStrategy() {
 			public boolean shouldSkipField(FieldAttributes f) {

@@ -35,10 +35,10 @@ public class Cliente implements Serializable {
 	@XmlElement(required = true)
 	private String nome;
 	
-	@Column(name="data_nascimento", nullable = false)
-	@Temporal(TemporalType.DATE)
-	@XmlElement(required = true)
-	private Date dataNascimento;
+//	@Column(name="data_nascimento", nullable = false)
+//	@Temporal(TemporalType.DATE)
+//	@XmlElement(required = true)
+//	private Date dataNascimento;
 	
 	public Long getSeqCliente() {
 		return seqCliente;
@@ -56,12 +56,12 @@ public class Cliente implements Serializable {
 		this.nome = nome;
 	}
 	
-	public Date getDataNascimento() {
-		return dataNascimento;
-	}
-	
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
+//	public Date getDataNascimento() {
+//		return dataNascimento;
+//	}
+//	
+//	public void setDataNascimento(Date dataNascimento) {
+//		this.dataNascimento = dataNascimento;
+//	}
 	
 }

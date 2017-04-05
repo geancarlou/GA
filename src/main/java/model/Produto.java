@@ -29,9 +29,9 @@ public class Produto implements Serializable {
 	@XmlElement(required = true)
 	private Long seqProduto;
 	
-	@Column(name="descricao", nullable = false, length = 250)
+	@Column(name="nome", nullable = false, length = 250)
 	@XmlElement(required = true)
-	private String descricao;
+	private String nome;
 	
 	@Column(name="valor", nullable = false)
 	@XmlElement(defaultValue = "0")
@@ -45,12 +45,12 @@ public class Produto implements Serializable {
 		this.seqProduto = seqProduto;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public BigDecimal getValor() {
