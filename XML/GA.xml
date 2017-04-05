@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GA>
+	<cliente>
+	  <seqCliente>1</seqCliente>
+	  <nome>Luís Pozenato</nome>
+	</cliente>
+	<vendedor>
+	  <seqVendedor>1</seqVendedor>
+	  <nome>Geancarlo Urnau</nome>
+	  <documento>38385077545</documento>
+	</vendedor>
+	<produto>
+	  <seqProduto>1</seqProduto>
+	  <nome>Caderno</nome>
+	  <valor>2.50</valor>
+	</produto>
+	<pedido>
+	  <seqPedido>1</seqPedido>
+	  <cliente>
+	    <seqCliente>1</seqCliente>
+	    <nome>Luís Pozenato</nome>
+	  </cliente>
+	  <vendedor>
+	    <seqVendedor>1</seqVendedor>
+	    <nome>Geancarlo Urnau</nome>
+	    <documento>38385077545</documento>
+	  </vendedor>
+	  <valorTotalPedido>25.00</valorTotalPedido>
+	  <item>
+	    <seqItem>1</seqItem>
+	    <quantidade>10</quantidade>
+	    <produto>
+	      <seqProduto>1</seqProduto>
+	      <nome>Caderno</nome>
+	      <valor>2.50</valor>
+	    </produto>
+	    <valorTotal>25.00</valorTotal>
+	  </item>
+	</pedido>
+</GA>

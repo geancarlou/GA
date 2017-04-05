@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://model/produto" version="1.0">
+ 
+  <xs:complexType name="produto">
+	<xs:sequence>
+    	 <xs:element name="seqProduto" type="xs:long"/>
+  	<xs:element name="nome" type="xs:string"/>
+  	<xs:element default="0" minOccurs="0" name="valor" type="xs:decimal"/>
+	</xs:sequence>
+  </xs:complexType>
+</xs:schema>

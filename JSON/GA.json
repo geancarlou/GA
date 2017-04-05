@@ -1,0 +1,49 @@
+{GA:
+	{
+		"cliente":{
+			  "seqCliente": 1,
+			  "nome": "Luís Pozenato"
+		}
+	},
+	{
+		"vendedor": {
+			"seqVendedor": 1,
+			"nome": "Geancarlo Urnau",
+			"documento": "38385077545"
+		}
+	},
+	{
+		"produto":{
+			"seqProduto": 1,
+			"nome": "Caderno",
+			"valor": 2.50
+		}
+	},
+	{
+		"pedido": {
+			"seqPedido": 1,
+			"cliente": {
+				"seqCliente": 1,
+				"nome": "Luís Pozenato"
+			},
+			"vendedor": {
+				"seqVendedor": 1,
+				"nome": "Geancarlo Urnau",
+				"documento": "38385077545"
+			},
+			"valorTotalPedido": 25.00,
+			"listaitens": [
+			    {
+					"seqItem": 1,
+					"quantidade": 10,
+					"produto": {
+				        "seqProduto": 1,
+				        "nome": "Caderno",
+				        "valor": 2.50
+					},
+					"valorTotal": 25.00
+			    }
+		  	]
+		}
+	}
+}

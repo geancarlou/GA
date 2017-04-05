@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cliente="http://model/cliente" xmlns:item="http://model/item" xmlns:pedido="http://model/pedido" xmlns:produto="http://model/produto" xmlns:vendedor="http://model/vendedor" targetNamespace="http://model/item" version="1.0">
+ 
+  <xs:import namespace="http://model/produto" schemaLocation="produto.xsd"/>
+  <xs:import namespace="http://model/cliente" schemaLocation="cliente.xsd"/>
+  <xs:import namespace="http://model/vendedor" schemaLocation="vendedor.xsd"/>
+  <xs:import namespace="http://model/pedido" schemaLocation="pedido.xsd"/>
+ 
+  <xs:complexType name="item">
+	<xs:sequence>
+  	<xs:element name="seqItem" type="xs:long"/>
+  	<xs:element name="quantidade" type="xs:long"/>
+  	<xs:element name="produto" type="ns1:produto"/>
+  	<xs:element name="pedido" type="ns4:pedido"/>
+  	<xs:element minOccurs="0" name="valorTotal" type="xs:decimal"/>
+	</xs:sequence>
+  </xs:complexType>
+</xs:schema>
