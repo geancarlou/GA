@@ -106,5 +106,19 @@ public class Pedido implements Serializable {
 	public void setDataPedido(Date dataPedido) {
 		this.dataPedido = dataPedido;
 	}
+	
+	@Override
+	public String toString() {
+		String prods = ", Produtos: { ";
+		Integer i = 0;
+		for(Item item : this.listaitens){
+			if(i != 0){
+				prods += ", ";
+			}
+			prods += item.getProduto().getSeqProduto() + ": "  + item.getProduto().getNome();
+			i++;
+		}
+		return "seqPedido: " + this.seqPedido + " Cliente: " + this.cliente.getNome()+ ", Vendedor: " + this.vendedor.getNome() + prods + " }";
+	}
 
 }

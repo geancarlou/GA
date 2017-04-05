@@ -48,4 +48,9 @@ public class Cliente implements Serializable {
 		this.nome = nome;
 	}
 	
+	@Override
+	public String toString() {
+		return "seqCliente: " + this.seqCliente + " nome: " + this.nome;
+	}
+	
 }

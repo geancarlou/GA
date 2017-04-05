@@ -61,6 +61,7 @@ public class Main {
 			/* COMITA DADOS NO BANCO */
 			session.getTransaction().commit();
 
+			// XML
 			XStream xstream = new XStream();
 			xstream.autodetectAnnotations(true);
 			xstream.alias("cliente", Cliente.class);
@@ -85,6 +86,8 @@ public class Main {
 			}
 			System.out.println();
 			
+			
+			// JSON
 			JsonUtils json = new JsonUtils();
 			System.out.print("{\"cliente\": " + json.toJson(cliente) + "}");
 			System.out.println();
@@ -95,6 +98,8 @@ public class Main {
 			json = new JsonUtils("pedido");
 			System.out.print("{\"pedido\": " + json.toJson(pedido) + "}");
 			
+			//QUERIES
+			Queries(session);
 			
 			session.close();
 
@@ -119,5 +124,35 @@ public class Main {
 		vendedor.setDocumento("38385077545");
 		session.save(vendedor);
 		return vendedor;
+	}
+	
+	private static void Queries(Session session){
+		//Selects Vendedores
+		List<Vendedor> vendedores = session.createQuery("SELECT v FROM Vendedor v").getResultList();
+		System.out.print("##### Vendedores #####\n");
+		for(Vendedor v : vendedores){
+			System.out.print(v.toString() + "\n");
+		}
+		
+		//Selects Clientes
+		List<Cliente> clientes= session.createQuery("SELECT c FROM Cliente c").getResultList();
+		System.out.print("##### Clientes #####\n");
+		for(Cliente c : clientes){
+			System.out.print(c.toString() + "\n");
+		}
+		
+		//Selects Produtos
+		List<Produto> produtos= session.createQuery("SELECT p FROM Produto p").getResultList();
+		System.out.print("##### Produtos #####\n");
+		for(Produto p : produtos){
+			System.out.print(p.toString() + "\n");
+		}
+		
+		//Selects Pedidos
+		List<Pedido> pedidos= session.createQuery("SELECT p FROM Pedido p").getResultList();
+		System.out.print("##### Pedidos #####\n");
+		for(Pedido p : pedidos){
+			System.out.print(p.toString() + "\n");
+		}
 	}
 }

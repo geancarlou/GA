@@ -61,4 +61,9 @@ public class Produto implements Serializable {
 		this.valor = valor;
 	}
 
+	@Override
+	public String toString() {
+		return "seqProduto: " + this.seqProduto+ " nome: " + this.nome + " valor: " + this.valor;
+	}
+	
 }

@@ -60,4 +60,10 @@ public class Vendedor implements Serializable {
 		this.nome = nome;
 	}
 	
+	@Override
+	public String toString() {
+		return "seqVendedor: " + this.seqVendedor + " nome: " + this.nome;
+	}
+	
+	
 }
