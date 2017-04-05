@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -39,11 +36,6 @@ public class Vendedor implements Serializable {
 	@XmlElement(required = true)
 	private String documento;
 	
-//	@Column(name="data_nascimento", nullable = false)
-//	@Temporal(TemporalType.DATE)
-//	@XmlElement(required = true)
-//	private Date dataNascimento;
-	
 	public Long getSeqVendedor() {
 		return seqVendedor;
 	}
@@ -67,13 +59,5 @@ public class Vendedor implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-//	public Date getDataNascimento() {
-//		return dataNascimento;
-//	}
-//	
-//	public void setDataNascimento(Date dataNascimento) {
-//		this.dataNascimento = dataNascimento;
-//	}
 	
 }

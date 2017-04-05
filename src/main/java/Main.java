@@ -1,8 +1,5 @@
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -73,10 +70,10 @@ public class Main {
 			xstream.alias("item", Item.class);
 			xstream.addImplicitCollection(Pedido.class, "listaitens", "item", Item.class);
 
-			System.out.print(xstream.toXML(cliente));
-			System.out.print(xstream.toXML(vendedor));
-			System.out.print(xstream.toXML(caderno));
-			System.out.print(xstream.toXML(pedido));
+			System.out.println(xstream.toXML(cliente));
+			System.out.println(xstream.toXML(vendedor));
+			System.out.println(xstream.toXML(caderno));
+//			System.out.print(xstream.toXML(pedido));
 
 			System.out.println("-----------------------------------------");
 			List<Pedido> listaPedidos = session.createCriteria(Pedido.class).list();
@@ -84,20 +81,16 @@ public class Main {
 			xstream.ignoreUnknownElements();
 
 			for (Pedido pedidos : listaPedidos) {
-				System.out.print(xstream.toXML(pedidos));
+				System.out.println(xstream.toXML(pedidos));
 			}
 			System.out.println();
 			
 			JsonUtils json = new JsonUtils();
-			System.out.print("{\"cliente\": " + json.toJson(cliente) + "}");
-			System.out.println();
-			System.out.print("{\"vendedor\": " + json.toJson(vendedor) + "}");
-			System.out.println();
-			System.out.print("{\"produto\":" + json.toJson(caderno) + "}");
-			System.out.println();
+			System.out.println("{\"cliente\":" + json.toJson(cliente) + "}");
+			System.out.println("{\"vendedor\": " + json.toJson(vendedor) + "}");
+			System.out.println("{\"produto\":" + json.toJson(caderno) + "}");
 			json = new JsonUtils("pedido");
-			System.out.print("{\"pedido\": " + json.toJson(pedido) + "}");
-			
+			System.out.println("{\"pedido\": " + json.toJson(pedido) + "}");
 			
 			session.close();
 
